@@ -2,12 +2,7 @@
 
 I was hired by a local metal building dealer to automated their quoting processes to help eliminate human error.
 
-
-
-
-
 Made by [@blake-runyon](https://github.com/blake-runyon)
-
 
 ## Features
 
