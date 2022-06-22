@@ -24,7 +24,7 @@ const AddUser = () => {
         <InputText value={user.email} onChange={(e) => setUser({ ...user, email: e.target.value })} />
         <h3>Password</h3>
         <Password value={user.password} onChange={(e) => setUser({ ...user, password: e.target.value })}/>
-
+        <br />
         <Button 
         label="Add User" 
         type='submit'

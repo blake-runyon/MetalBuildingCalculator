@@ -14,18 +14,24 @@ const Users = () => {
         userService.GetUsers().then(data => setUsers(data))    
     });
 
+    
     return (
         <>
-        <div className={`${shown ? "": "hidden"}`}>
-            <AddUser />
+        <div className="grid">
+            <div className="col-12 md:col-2 text-center">
+                <div className={`${shown ? "": "hidden"}`}>
+                    <AddUser />
+                </div>
+                <ToggleButton onLabel="Hide Add User" offLabel="Add User" checked={shown} onChange={(e) => setShown(e.value)} />
+            </div>
+            <div className="col-12 md:col-10">
+                <DataTable value={users} responsiveLayout="scroll">
+                    <Column field="username" header="Username"></Column>
+                    <Column field="email" header="Email"></Column>
+                    <Column field="password" header="Password"></Column>
+                </DataTable>
+            </div>
         </div>
-        <ToggleButton onLabel="Hide Add User" offLabel="Add User" checked={shown} onChange={(e) => setShown(e.value)} />
-        
-        <DataTable value={users} responsiveLayout="scroll">
-            <Column field="username" header="Username"></Column>
-            <Column field="email" header="Email"></Column>
-            <Column field="password" header="Edit"></Column>
-        </DataTable>
         </>
     )
 }
