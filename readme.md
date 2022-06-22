@@ -19,6 +19,14 @@ Made by [@blake-runyon](https://github.com/blake-runyon)
 - React
 - NodeJS
 
+## Dependencies
+
+- PrimeReact (UI Components)
+- PrimeIcons (Icon Library)
+- PrimeFlex (CSS Utility Classes)
+- Axios (HTTP Methods)
+- Mongoose (Object Data Modeling)
+
 ## Used By
 
 This project is used by: Ascential Buildings of Beckley, WV.
