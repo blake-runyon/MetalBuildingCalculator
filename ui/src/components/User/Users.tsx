@@ -28,7 +28,6 @@ const Users = () => {
                 <DataTable value={users} responsiveLayout="scroll">
                     <Column field="username" header="Username"></Column>
                     <Column field="email" header="Email"></Column>
-                    <Column field="password" header="Password"></Column>
                 </DataTable>
             </div>
         </div>
