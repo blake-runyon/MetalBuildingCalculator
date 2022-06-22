@@ -10,6 +10,7 @@ import {
 } from 'react-router-dom';
 import Header from './components/Header';
 import Users from './components/User/Users';
+import Clients from './components/Client/Clients';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -21,6 +22,7 @@ root.render(
     <Routes>
       <Route path="/" element={<App />}/>
       <Route path='/users' element={<Users />} />
+      <Route path='/clients' element={<Clients />} />
     </Routes>
   </BrowserRouter>
   </>

@@ -10,6 +10,11 @@ export const items = [
         url: '/users'
     },
     {
+        label: 'Clients',
+        icon: 'pi pi-user',
+        url: '/clients'
+    },
+    {
         label:'Quotes',
         icon:'pi pi-tag',
     },
