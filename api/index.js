@@ -42,6 +42,10 @@ app.post('/add-client', async (req, res) => {
     }))
 })
 
+app.delete('/delete-client/:id', async (req, res) => {
+    res.send(await Client.deleteOne({ _id: req.params.id }))
+})
+
 
 app.listen(PORT, () => {
     console.log(`Now listening on port ${PORT}`)

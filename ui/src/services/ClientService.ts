@@ -9,4 +9,8 @@ export class ClientService {
     PostClient(client: Client) {
         return axios.post(`http://localhost:8080/add-client`, client).then(res => console.log(res))
     }
+
+    DeleteClient(id: string) {
+        return axios.delete(`http://localhost:8080/delete-client/${id}`)
+    }
 }
