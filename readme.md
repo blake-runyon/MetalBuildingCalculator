@@ -12,6 +12,12 @@ Made by [@blake-runyon](https://github.com/blake-runyon)
 - Backend Suite to Customize Every Aspect of the Quoting Processes
 - Generate Quotes, Invoices, and Sign Off Sheets and Export Them to a PDF
 
+## Tech Stack
+
+- MongoDB
+- Express
+- React
+- NodeJS
 
 ## Used By
 
