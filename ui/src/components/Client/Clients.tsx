@@ -21,6 +21,13 @@ const Clients = () => {
          }} />
     }
 
+    const footer = () => {
+        return <Button className="p-button-danger p-button-rounded" label="Delete" onClick={() => {
+            clientService.DeleteClient(`${currClient?._id}`);
+            setEditing(!editing)
+        }} />
+    }
+
     useEffect(() => {
         clientService.GetClients().then(data => setClients(data))    
     });
@@ -46,7 +53,7 @@ const Clients = () => {
             <Column header="EDIT" body={editButtonTemplate}></Column>
         </DataTable>
 
-        <Dialog visible={editing} header="Client Details" onHide={() => setEditing(!editing)}>
+        <Dialog visible={editing} header="Client Details" onHide={() => setEditing(!editing)} footer={footer}>
             <p>{currClient?.name}</p>
         </Dialog>  
         
