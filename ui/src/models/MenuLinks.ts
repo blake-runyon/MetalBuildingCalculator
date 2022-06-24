@@ -21,5 +21,6 @@ export const items = [
     {
         label:'Support',
         icon:'pi pi-envelope',
+        url: '/support'
     },
  ];
