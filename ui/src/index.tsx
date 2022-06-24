@@ -11,6 +11,7 @@ import {
 import Header from './components/Header';
 import Users from './components/User/Users';
 import Clients from './components/Client/Clients';
+import Support from './components/Support';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -23,6 +24,7 @@ root.render(
       <Route path="/" element={<App />}/>
       <Route path='/users' element={<Users />} />
       <Route path='/clients' element={<Clients />} />
+      <Route path='/support' element={<Support />} />
     </Routes>
   </BrowserRouter>
   </>
