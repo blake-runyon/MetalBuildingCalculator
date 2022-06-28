@@ -13,4 +13,8 @@ export class ClientService {
     DeleteClient(id: string) {
         return axios.delete(`http://localhost:8080/delete-client/${id}`)
     }
+
+    EditClient(id: string, client: Client) {
+        return axios.patch(`http://localhost:8080/edit-client/${id}`, client)
+    }
 }

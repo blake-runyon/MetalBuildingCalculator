@@ -42,6 +42,21 @@ app.post('/add-client', async (req, res) => {
     }))
 })
 
+app.patch('/edit-client/:id', async (req, res) => {
+    const c = {
+        name: req.body.name, 
+        email: req.body.email, 
+        phone: req.body.phone, 
+        address: { 
+            street: req.body.address.street, 
+            city: req.body.address.city, 
+            state: req.body.address.state, 
+            zipcode: req.body.address.zipcode
+        }
+    }
+    res.send(await Client.updateOne({ _id: req.params.id }, c))
+})
+
 app.delete('/delete-client/:id', async (req, res) => {
     res.send(await Client.deleteOne({ _id: req.params.id }))
 })
