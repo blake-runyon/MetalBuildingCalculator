@@ -1,3 +1,5 @@
 api/connect.js
 api/node_modules/.package-lock.json
 api/node_modules
+tests/node_modules
+details.txt
