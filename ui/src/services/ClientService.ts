@@ -6,6 +6,10 @@ export class ClientService {
         return axios.get('http://localhost:8080/clients').then(d => d.data)
     }
 
+    GetClient(id: string) {
+        return axios.get('http://localhost:8080/client/' + id).then(d => d.data)
+    }
+
     PostClient(client: Client) {
         return axios.post(`http://localhost:8080/add-client`, client).then(res => console.log(res))
     }

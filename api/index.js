@@ -28,6 +28,10 @@ app.get('/clients', async (req, res) => {
     res.send(await Client.find())
 })
 
+app.get('/client/:id', async (req, res) => {
+    res.send(await Client.findById(req.params.id))
+})
+
 app.post('/add-client', async (req, res) => {
     res.send(await Client.create({
         name: req.body.name, 
