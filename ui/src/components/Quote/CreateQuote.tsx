@@ -5,13 +5,20 @@ import { ClientService } from '../../services/ClientService'
 import { QuoteService } from '../../services/QuoteService'
 import { Dropdown } from 'primereact/dropdown'
 import { Checkbox } from 'primereact/checkbox'
+import { Button } from 'primereact/button'
+import { BuildingTypeLogic } from '../../services/BuildingTypeLogic'
+import AddClient from '../Client/AddClient'
+import CarportForm from './BuildingForms/Carport'
+import OtherForm from './BuildingForms/Other'
 
 const CreateQoute = () => {
     const clientService = new ClientService()
     const quoteService = new QuoteService()
+    const buildingType = new BuildingTypeLogic();
     const [selectedSize, setSelectedSize] = useState(null)
     const [sizes, setSizes] = useState([""])
     const [sides, setSides] = useState<any>([])
+    const [type, setType] = useState<string>("")
     const id = "62bb2bd4cf0a5db23254d38a"
     
     const [client, setClient] = useState<Client>(
@@ -44,7 +51,7 @@ const CreateQoute = () => {
   
   const onSideChange = (e: any) => {
     let selectedSides: any = [...sides]
-
+    
     if(e.checked) {
       selectedSides.push(e.value)
     } else {
@@ -54,17 +61,33 @@ const CreateQoute = () => {
     setSides(selectedSides)
   }
 
-    return (
+  const handleFormDisplay = () => {
+    let front, back, side;
+    if(sides.length === 0) {
+      setType("Carport")
+      return
+    }
+    if(sides.includes('left') || sides.includes('right')) {
+      side = true
+    } else {
+      side = false
+    }
+    front = sides.includes('front')
+    back = sides.includes('back')
+    setType(buildingType.GetType(front, back, side))
+  }
+
+  return (
     <>
     <div className="mt-5">
       <ClientDetails client={client!} />
     </div>
     <div className="mt-5 formgrid grid">
-      <div className="field col-12 md:col-6">
+      <div className="field col-12 md:col-4">
         <label htmlFor="Size" className="mr-2">Choose a Size</label>
         <Dropdown placeholder="All Sizes" options={sizes} value={selectedSize} onChange={(e) => setSelectedSize(e.value)}/>
       </div>
-      <div className="field col-12 md:col-6">
+      <div className="field col-12 md:col-4">
         <label htmlFor="front" className="m-2">Front</label>
         <Checkbox inputId='front' name='front' value="front" checked={sides.indexOf('front') !== -1} onChange={onSideChange} />
         <label htmlFor="back" className="m-2">Back</label>
@@ -74,7 +97,12 @@ const CreateQoute = () => {
         <label htmlFor="right" className="m-2">Right Side</label>
         <Checkbox inputId='right' name='right' value="right" checked={sides.indexOf('right') !== -1} onChange={onSideChange} />
       </div>
+      <div className="col-12 md:col-4">
+      { type === "Carport" ? <CarportForm /> : type === "" ? "" : <OtherForm type={type}/>}
+      </div>
     </div>
+    <Button label="Next" onClick={handleFormDisplay} />
+  
     </>
     
   );
