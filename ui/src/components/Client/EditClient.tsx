@@ -8,7 +8,6 @@ const EditClient = (props:{ client: Client}) => {
 
     const clientService = new ClientService();
     const [client, setClient] = useState<Client>(props.client);
-    const [editing, setEditing] = useState(false);
     return (
         <>
         
@@ -60,7 +59,9 @@ const EditClient = (props:{ client: Client}) => {
                 }
             })} />
         </div>
-        
+        <Button label="Save" onClick={() => {
+            clientService.EditClient(client._id!, client)
+            }}/>
         </>
     )
 }

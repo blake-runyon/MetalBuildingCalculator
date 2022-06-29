@@ -42,10 +42,6 @@ const Clients = () => {
                     clientService.DeleteClient(`${client?._id}`);
                     setEditing(!editing)
                 }} />
-                <Button label="Save" className="p-button-rounded" onClick={() => {
-                    clientService.EditClient(client._id!, client)
-                    setEditing(false)
-                }}/>
             </>
         )
     }
