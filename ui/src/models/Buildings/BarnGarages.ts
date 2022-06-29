@@ -1,22 +1,22 @@
 export interface BarnGarages {
     type: string,
     size: string,
-    windows: {
+    windows?: {
         amt: Number,
         size: string,
         side: string
     },
-    doors: {
+    doors?: {
         amt: Number,
         size: string,
         side: string
     },
-    garageDoors: {
+    garageDoors?: {
         amt: Number,
         size: string,
         side: string
     },
-    leanTo: {
+    leanTo?: {
         amt: Number,
         size: string,
     },
