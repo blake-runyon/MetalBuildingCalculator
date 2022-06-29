@@ -6,3 +6,11 @@
 .hidden {
     display: none;
 }
+
+.clientDetailsCard .p-card-title {
+    color: rgb(84, 84, 84);
+}
+
+.border-ared {
+    border-color: rgb(197, 2, 2);
+}
