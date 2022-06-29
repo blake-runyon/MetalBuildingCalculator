@@ -10,7 +10,8 @@ const conn = require('./connect')
 app.use(cors())
 
 const User = require('./schemas/User')
-const Client = require('./schemas/Client')
+const Client = require('./schemas/Client');
+const Size = require('./schemas/Sizes');
 
 app.get('/users', async (req, res) => {
     res.send(await User.find())
@@ -63,6 +64,18 @@ app.patch('/edit-client/:id', async (req, res) => {
 
 app.delete('/delete-client/:id', async (req, res) => {
     res.send(await Client.deleteOne({ _id: req.params.id }))
+})
+
+app.get('/get-sizes', async (req, res) => {
+    res.send(await Size.find())
+})
+
+app.post('/add-size', async (req, res) => {
+    res.send(await Size.create({
+        length: req.body.length,
+        height: req.body.height,
+        width: req.body.width
+    }))
 })
 
 
