@@ -17,6 +17,7 @@ export const items = [
     {
         label:'Quotes',
         icon:'pi pi-tag',
+        url: '/quotes'
     },
     {
         label:'Support',

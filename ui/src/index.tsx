@@ -6,12 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import { 
         BrowserRouter,
         Routes,
-        Route 
+        Route, 
+        useParams
 } from 'react-router-dom';
 import Header from './components/Header';
 import Users from './components/User/Users';
 import Clients from './components/Client/Clients';
 import Support from './components/Support';
+import CreateQoute from './components/Quote/CreateQuote';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -24,6 +26,7 @@ root.render(
       <Route path="/" element={<App />}/>
       <Route path='/users' element={<Users />} />
       <Route path='/clients' element={<Clients />} />
+      <Route path='/quotes' element={<CreateQoute />} />
       <Route path='/support' element={<Support />} />
     </Routes>
   </BrowserRouter>
