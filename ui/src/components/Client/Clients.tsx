@@ -55,7 +55,7 @@ const Clients = () => {
         <>
 
         <Dialog visible={editing} footer={footer} header="Client Details" onHide={() => setEditing(!editing)}>
-            <EditClient client={client!} />
+            <EditClient client={client!} setEditing={setEditing} />
         </Dialog>
 
         <Dialog header="Create A Client" visible={shown} onHide={() => { setShown(!shown)}}>

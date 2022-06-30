@@ -15,7 +15,7 @@ export const items = [
         url: '/clients'
     },
     {
-        label:'Quotes',
+        label:'Create A Quote',
         icon:'pi pi-tag',
         url: '/quotes'
     },

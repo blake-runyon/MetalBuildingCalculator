@@ -2,6 +2,7 @@
 @import "primereact/resources/primereact.min.css";                  
 @import "primeicons/primeicons.css";
 @import 'primeflex/primeflex.css';
+/* #700000 */
 
 .hidden {
     display: none;
@@ -13,4 +14,10 @@
 
 .border-ared {
     border-color: rgb(197, 2, 2);
+}
+
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

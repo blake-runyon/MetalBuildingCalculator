@@ -9,6 +9,12 @@ const conn = require('./connect')
 
 app.use(cors())
 
+app.use('/login', (req, res) => {
+    res.send({
+      token: 'test123'
+    });
+  });
+
 const User = require('./schemas/User')
 const Client = require('./schemas/Client');
 const Size = require('./schemas/Sizes');

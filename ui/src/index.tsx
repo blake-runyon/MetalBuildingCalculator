@@ -6,30 +6,22 @@ import reportWebVitals from './reportWebVitals';
 import { 
         BrowserRouter,
         Routes,
-        Route, 
-        useParams
+        Route,
+        useNavigate
 } from 'react-router-dom';
 import Header from './components/Header';
 import Users from './components/User/Users';
 import Clients from './components/Client/Clients';
 import Support from './components/Support';
 import CreateQoute from './components/Quote/CreateQuote';
+import { Auth0Provider } from '@auth0/auth0-react'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <>
-  <Header />
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />}/>
-      <Route path='/users' element={<Users />} />
-      <Route path='/clients' element={<Clients />} />
-      <Route path='/quotes' element={<CreateQoute />} />
-      <Route path='/support' element={<Support />} />
-    </Routes>
-  </BrowserRouter>
+  <App />
   </>
 );
 
