@@ -74,6 +74,7 @@ const CreateQoute = () => {
     }
     front = sides.includes('front')
     back = sides.includes('back')
+    console.log(front + back + side)
     setType(buildingType.GetType(front, back, side))
   }
 
@@ -88,14 +89,23 @@ const CreateQoute = () => {
         <Dropdown placeholder="All Sizes" options={sizes} value={selectedSize} onChange={(e) => setSelectedSize(e.value)}/>
       </div>
       <div className="field col-12 md:col-4">
-        <label htmlFor="front" className="m-2">Front</label>
-        <Checkbox inputId='front' name='front' value="front" checked={sides.indexOf('front') !== -1} onChange={onSideChange} />
-        <label htmlFor="back" className="m-2">Back</label>
-        <Checkbox inputId='back' name='back' value="back" checked={sides.indexOf('back') !== -1} onChange={onSideChange} />
-        <label htmlFor="left" className="m-2">Left Side</label>
-        <Checkbox inputId='left' name='left' value="left" checked={sides.indexOf('left') !== -1} onChange={onSideChange} />
-        <label htmlFor="right" className="m-2">Right Side</label>
-        <Checkbox inputId='right' name='right' value="right" checked={sides.indexOf('right') !== -1} onChange={onSideChange} />
+        <h3>Select What Sides Are Enclosed</h3>
+        <div className="block mt-2">
+          <Checkbox inputId='front' name='front' value="front" checked={sides.indexOf('front') !== -1} onChange={onSideChange} />
+          <label htmlFor="front" className="m-2">Front</label>
+        </div>
+        <div className="block mt-2">
+          <Checkbox inputId='left' name='left' value="left" checked={sides.indexOf('left') !== -1} onChange={onSideChange} />
+          <label htmlFor="left" className="m-2">Left Side</label>
+        </div>
+        <div className="block mt-2">
+          <Checkbox inputId='right' name='right' value="right" checked={sides.indexOf('right') !== -1} onChange={onSideChange} />
+          <label htmlFor="right" className="m-2">Right Side</label>
+        </div>
+        <div className="block mt-2">
+          <Checkbox inputId='back' name='back' value="back" checked={sides.indexOf('back') !== -1} onChange={onSideChange} />
+          <label htmlFor="back" className="m-2">Back</label>
+        </div>
       </div>
       <div className="col-12 md:col-4">
       { type === "Carport" ? <CarportForm /> : type === "" ? "" : <OtherForm type={type}/>}
