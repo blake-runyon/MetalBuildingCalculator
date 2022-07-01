@@ -1,4 +1,3 @@
-import React, {useState } from 'react';
 import './App.css';
 import Dashboard from './components/Dashboard';
 import Header from './components/Header';
@@ -10,20 +9,10 @@ import Login from '../src/pages/Login'
 import { 
   BrowserRouter,
   Routes,
-  Route,
-  useNavigate
+  Route
 } from 'react-router-dom';
 import useToken from './auth/useToken';
 
-function setToken(userToken: string) {
-  sessionStorage.setItem('token', JSON.stringify(userToken));
-}
-
-function getToken() {
-  const tokenString = sessionStorage.getItem('token');
-  const userToken = JSON.parse(tokenString!);
-  return userToken?.token
-}
 
 function App() {
   const { token, setToken} = useToken();
