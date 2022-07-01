@@ -1,7 +1,5 @@
 import { InputNumber } from 'primereact/inputnumber'
-import { Dropdown } from 'primereact/dropdown'
 import { Checkbox } from 'primereact/checkbox'
-import { Button } from 'primereact/button'
 import { useState } from 'react'
 
 const OtherForm = (props:{type: string}) => {
