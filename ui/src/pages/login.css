@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.bg-grass {
+    background-image: url('../../public/grass.jpeg');
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+.bg-grass .p-button {
+    background-color: rgb(169, 0, 0);
+    border-color:rgb(100, 0, 0);
+}
+
+.bg-grass .p-button:hover {
+    background-color: rgb(100, 0, 0);
+    border-color:rgb(169, 0, 0);
+}
+
+.bg-grass h2 {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+}
+
+.bg-grass label {
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+}

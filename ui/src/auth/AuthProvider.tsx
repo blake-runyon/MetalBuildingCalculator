@@ -12,4 +12,5 @@ export const AuthProvider = (props:{ children: any}) => {
     )
 }
 
+
 export default AuthContext;
