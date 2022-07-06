@@ -1,18 +1,15 @@
 export class BuildingTypeLogic {
-    GetType(front: boolean, back: boolean, side: boolean) {
-
-        
-
-        if(front === false && back === false && side === false) {
-            return "Carport"
-        } else if((front || back) && side === false) {
+    GetType(front: boolean, back: boolean, side: boolean, garageDoor: boolean, leanTo: boolean) {
+        if(leanTo) {
             return "Barn"
-        } else if(side && (front || back)) {
-            return "Enclosed Garage"
-        } else {
+        } else if(garageDoor && side) {
+            return "Enclosed Carport"
+        } else if (!side && !front && !back) {
             return "Carport"
+        } else if ((side && front && back) && !garageDoor) {
+            return "Workshop"
+        } else {
+            return "Unknown"
         }
-
-        return "Error: Unknown type"
     }
 }
