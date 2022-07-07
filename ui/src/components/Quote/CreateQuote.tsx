@@ -7,7 +7,6 @@ import { Dropdown } from 'primereact/dropdown'
 import { Checkbox } from 'primereact/checkbox'
 import { Button } from 'primereact/button'
 import { BuildingTypeLogic } from '../../services/BuildingTypeLogic'
-import AddClient from '../Client/AddClient'
 import CarportForm from './BuildingForms/Carport'
 import OtherForm from './BuildingForms/Other'
 
@@ -42,6 +41,7 @@ const CreateQoute = () => {
     })
 
     quoteService.GetSizes().then(sizes => {
+      // eslint-disable-next-line @typescript-eslint/no-array-constructor
       var sizeString = new Array();
       for(let i = 0; i < sizes.length; i++) {
         let sString = `${sizes[i].length}x${sizes[i].width}`
@@ -49,6 +49,7 @@ const CreateQoute = () => {
       }
       setSizes(sizeString)
     })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
   const onSideChange = (e: any) => {
@@ -64,7 +65,8 @@ const CreateQoute = () => {
 
   }
 
-  const handleFormDisplay = async () => {
+  const handleFormDisplay = async (e: any) => {
+    e.preventDefault()
     let front, back, side;
     front = sides.includes('front')
     back = sides.includes('back')
@@ -75,18 +77,6 @@ const CreateQoute = () => {
     }
 
     await setType(buildingType.GetType(front, back, side, garageDoor, leanTo))
-    console.info("Type: " + type)
-    // console.log("Garage Door? " + garageDoor)
-    // console.log("Lean To? " + leanTo)
-    // if(sides.length === 0) {
-    //   setType("Carport")
-    //   return
-    // }
-    
-    
-    // console.log(front + back + side)
-    
-    
   }
 
   return (
