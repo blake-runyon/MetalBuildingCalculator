@@ -5,7 +5,7 @@ import { Button } from 'primereact/button'
 import './login.css'
 
 async function loginUser(credentials: any) {
-    return fetch('http://localhost:8080/login', {
+    return fetch('http://localhost:8080/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -10,4 +10,13 @@ const getUsers = async (req, res) => {
     }
 }
 
-module.exports = { getUsers }
+const addUser = async (req, res) => {
+    res.send(await User.create({
+        username: req.body.username, 
+        email: req.body.email, 
+        password: req.body.password
+    }))
+}
+
+
+module.exports = { getUsers, addUser }
