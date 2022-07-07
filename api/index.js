@@ -25,13 +25,13 @@ app.use('/login', async (req, res) => {
 
   });
 
-const User = require('./schemas/User')
-const Client = require('./schemas/Client');
-const Size = require('./schemas/Sizes');
+const User = require('./models/User')
+const Client = require('./models/Client');
+const Size = require('./models/Sizes');
 
-app.get('/users', async (req, res) => {
-    res.send(await User.find())
-})
+const userRoute = require('./routes/user')
+
+app.use('/users', userRoute)
 
 app.post('/add-user', async (req, res) => {
     res.send(await User.create({
