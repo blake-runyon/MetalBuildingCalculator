@@ -18,10 +18,12 @@ const userRoute = require('./routes/user.route')
 const clientRoute = require('./routes/client.route')
 const sizeRoute = require('./routes/size.route')
 const authRoute = require('./routes/auth.route')
+const buildingRoute = require('./routes/building.route')
 app.use('/user', userRoute)
 app.use('/client', clientRoute)
 app.use('/size', sizeRoute)
 app.use('/auth', authRoute)
+app.use('/building', buildingRoute)
 
 
 // Port Listener
