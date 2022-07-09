@@ -1,10 +1,9 @@
 // generate express router
 const express = require('express')
 const router = express.Router()
+const buildingController = require('../controllers/building.controller')
 
-router.get('/', (req, res) => {
-    res.send('Hello World')
-})
+router.post('/', buildingController.DetermineBuildingType)
 
 
 // export express router

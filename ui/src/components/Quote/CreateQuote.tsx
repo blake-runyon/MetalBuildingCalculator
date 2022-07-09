@@ -76,7 +76,7 @@ const CreateQoute = () => {
       side = false
     }
 
-    await setType(buildingType.GetType(front, back, side, garageDoor, leanTo))
+    await buildingType.GetType(front, back, side, garageDoor, leanTo).then(d => {setType(d.data)})
   }
 
   return (

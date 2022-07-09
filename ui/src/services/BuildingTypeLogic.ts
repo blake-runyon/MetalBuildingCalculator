@@ -1,15 +1,7 @@
+// import axios
+import axios from 'axios';
 export class BuildingTypeLogic {
     GetType(front: boolean, back: boolean, side: boolean, garageDoor: boolean, leanTo: boolean) {
-        if(leanTo) {
-            return "Barn"
-        } else if(garageDoor && side) {
-            return "Enclosed Carport"
-        } else if (!side && !front && !back) {
-            return "Carport"
-        } else if ((side && front && back) && !garageDoor) {
-            return "Workshop"
-        } else {
-            return "Unknown"
-        }
+        return axios.post('http://localhost:8080/building/', { front, back, side, garageDoor, leanTo }).then(d => d.data);
     }
 }
